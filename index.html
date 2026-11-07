@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17111f"><title>Clube VIP – Novelinhas</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div class="brand">CLUBE <span>VIP</span></div><button id="logout" class="ghost hidden">Sair</button></header>
+<main>
+<section id="auth" class="panel">
+  <div class="eyebrow">SEU ESPAÇO DE ENTRETENIMENTO</div><h1>Novelinhas para assistir</h1>
+  <p class="muted">Crie sua conta ou entre para acessar o catálogo.</p>
+  <div class="tabs"><button id="tabLogin" class="active">Entrar</button><button id="tabRegister">Criar conta</button></div>
+  <form id="authForm">
+    <label id="nameLabel" class="hidden">Nome<input id="name" autocomplete="name"></label>
+    <label>E-mail<input id="email" type="email" required autocomplete="email"></label>
+    <label>Senha<input id="password" type="password" required minlength="8" autocomplete="current-password"></label>
+    <button class="primary" type="submit" id="authSubmit">Entrar</button>
+  </form><p id="authMessage" class="message"></p>
+</section>
+<section id="home" class="hidden">
+  <div class="welcome"><div><div class="eyebrow">BEM-VINDO(A)</div><h1 id="welcomeName">Clube VIP</h1></div><span id="vipStatus" class="status">Visitante</span></div>
+  <div id="subscribe" class="panel">
+    <h2>Desbloqueie o Clube VIP</h2><p>Tenha acesso às novelinhas exclusivas por 30 dias.</p>
+    <div class="price">R$ 14,90 <small>/ 30 dias</small></div>
+    <button id="payButton" class="primary">Assinar com Pix</button>
+    <div id="pixArea" class="hidden pix">
+      <p>Escaneie o QR Code ou copie o código Pix:</p><img id="qrImage" alt="QR Code Pix" class="qr hidden">
+      <textarea id="pixCode" readonly></textarea><button id="copyPix" class="secondary">Copiar código Pix</button>
+      <p class="muted small">Após pagar, aguarde a confirmação automática e atualize seu acesso.</p>
+      <button id="checkVip" class="ghost">Já paguei – verificar acesso</button>
+    </div>
+  </div>
+  <div class="catalogHead"><h2>Catálogo</h2><span class="muted small">Conteúdos disponíveis</span></div>
+  <div id="catalog" class="catalog"></div>
+  <section id="admin" class="panel hidden">
+    <h2>Painel do administrador</h2><p class="muted">Cadastre novelinhas usando links de vídeo que você tem direito de disponibilizar.</p>
+    <form id="contentForm">
+      <label>Título<input id="contentTitle" required></label>
+      <label>Descrição<input id="contentDescription"></label>
+      <label>Link da capa (opcional)<input id="contentCover" type="url"></label>
+      <label>Link do vídeo<input id="contentVideo" type="url" required></label>
+      <button class="primary">Adicionar ao catálogo</button>
+    </form><p id="adminMessage" class="message"></p>
+    <h3>Usuários</h3><div id="users"></div>
+  </section>
+</section>
+</main>
+<footer>Clube VIP – Novelinhas</footer>
+<script src="/app.js"></script>
+</body></html>
